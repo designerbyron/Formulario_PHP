@@ -19,7 +19,7 @@ body{
 .formulario h1{
   text-align: center;
 }
-..mi_formulario label{
+.mi_formulario label{
   /*display: block;*/
   margin-bottom: 15px;
     font-size: 16px;

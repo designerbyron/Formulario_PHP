@@ -23,7 +23,7 @@
         </select>
         <label for="carrera">Carrera</label>
         <select class="select_carrera" name="carrera">
-          <option value="Ing Sistemas">Ing Sistemas</option>
+          <option value="Ing Sistemas" selected>Ing Sistemas</option>
           <option value="Diseno Grafico">Diseño Grafico</option>
           <option value="Administracion de Empresa">Administracion de Empresa</option>
         </select>
@@ -40,7 +40,7 @@
         <label for="email">Email</label>
         <input type="email" name="email" placeholder="Ingresa correo electronico">
         <div class="checkbox_email">
-          <input type="checkbox" name="recibir_email" value="1">
+          <input type="checkbox" name="recibir_email" value="true">
           <label for="recibir_email">Acepto recibir informacion mensual</label>
         </div>
           <input type="submit" name="submit" value="Agregar Matrícula">
