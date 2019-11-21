@@ -1,0 +1,57 @@
+body{
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center;
+  height: 100vh;
+
+}
+.formulario{
+  padding: 20px;
+  position: absolute;
+  width: 400px;
+  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+}
+.formulario h1{
+  text-align: center;
+}
+..mi_formulario label{
+  /*display: block;*/
+  margin-bottom: 15px;
+    font-size: 16px;
+}
+.mi_formulario input[type="text"],.mi_formulario input[type="email"],.mi_formulario select{
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+}
+.radios_becas{
+  font-size: 12px;
+  margin: 20px auto;
+}
+.mi_formulario input[type="submit"]{
+  width: 100%;
+  margin-top: 30px;
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  padding: 10px;
+  border:none;
+
+}
+.mi_formulario input[type="text"], .mi_formulario input[type="email"]{
+  outline: none;
+  border:none;
+  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid red;
+}
+
+
+}
