@@ -45,12 +45,74 @@ $conexion_bd = mysqli_connect("localhost","root","mipoepir","matriculas");
           //Almacenando en la base de datos la informacion de matriculas
           $conexion_bd -> query("
           INSERT INTO `datos` (`datos_nombres`, `datos_apellidos`, `datos_modalidad`, `datos_carrera`, `datos_pago`, `datos_email`, `datos_notificaciones`) VALUES ('".$nombres."', '".$apellidos."', '".$modalidad."', '".$carrera."', '".$pagos."', '".$email."', '".$recibir_email."');");
-
+          
         }else{
           echo "<h2>La informacion debe de provenir desde el Formulario</h2> ";
         }
 
        ?>
+<?php
+$query_cantidad_alumnos = "SELECT COUNT(`datos_id`) AS 'Cantidad_alumnos' FROM `datos` WHERE 1";
+$resultados_alumnos = $conexion_bd->query($query_cantidad_alumnos);
+$fila = $resultados_alumnos->fetch_assoc();
+
+
+$fila_alumnos = $fila['Cantidad_alumnos'];
+
+
+echo "Alumnos Matriculados actualmente ". $fila_alumnos;
+
+$resultados_matriculas = $conexion_bd -> query("SELECT * FROM `datos` WHERE 1");
+$tabla = $resultados_matriculas->fetch_all(MYSQLI_ASSOC);
+
+
+
+
+/* echo "<pre>";
+ print_r ($fila);
+echo "</pre>";
+ */
+
+?>
+<table>
+        <thead>
+          <tr>
+              <th># id</th>
+              <th>Fecha Matricula</th>
+              <th>Nombres</th>
+              <th>Apellidos</th>
+              <th>Modalidad</th>
+              <th>Carrera</th>
+              <th>Tipo de Pago</th>
+              <th>Email</th>
+              <th>Notificaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($tabla as $fila) {
+            # code...
+          ?>
+          <tr>
+            <th><?php echo $fila['datos_id']?></th>
+            <td><?php echo $fila['datos_fecha']?></td>
+            <td><?php echo $fila['datos_nombres']?></td>
+            <td><?php echo $fila['datos_apellidos']?></td>
+            <td><?php echo $fila['datos_modalidad']?></td>
+            <td><?php echo $fila['datos_carrera']?></td>
+            <td><?php echo $fila['datos_pago']?></td>
+            <td><?php echo $fila['datos_email']?></td>
+            <td><?php echo $fila['datos_notificaciones']?></td>
+          </tr>
+          <?php } ;?>
+        </tbody>
+
+</table>
+
+<?php 
+
+mysqli_close($conexion_bd);
+
+?>       
     </div>
   </body>
 </html>
