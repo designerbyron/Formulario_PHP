@@ -90,7 +90,7 @@ echo "</pre>";
         </thead>
         <tbody>
           <?php foreach ($tabla as $fila) {
-            # code...
+            
           ?>
           <tr>
             <th><?php echo $fila['datos_id']?></th>
